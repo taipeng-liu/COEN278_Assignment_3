@@ -1,6 +1,9 @@
 require 'sinatra'
 require 'rubygems'
 
+require_relative 'db/connect'
+require_relative 'models/user'
+
 class MyWebApp < Sinatra::Base
     configure do
         enable :sessions
