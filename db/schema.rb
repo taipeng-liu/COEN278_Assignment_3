@@ -1,8 +1,4 @@
-require 'sinatra'
-require 'rubygems'
-require 'active_record'
-
-ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+require 'connect'
 
 ActiveRecord::Migration.create_table :users do |t|
     t.string :name

@@ -1,15 +1,12 @@
 source 'https://rubygems.org'
 
-
-
 gem 'sinatra'
-gem 'slim'
-gem 'thin'
 gem 'stripe'
-gem 'json'
 gem 'dotenv'
 gem 'activerecord'
+gem 'sinatra-activerecord'
 gem 'sinatra-reloader'
+gem 'rack'
 
 group :development do
   gem 'mysql2'
