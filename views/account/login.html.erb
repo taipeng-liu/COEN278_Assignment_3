@@ -1,0 +1,33 @@
+<div class="card text-center" style="width: 18rem;margin:0 auto;">
+<div class="card-body">
+<script>
+// function login(){
+//     var usernameInput = document.getElementById("username");
+//     var passwordInput = document.getElementById("password");
+//     var username = usernameInput.value.trim();
+//     var password = passwordInput.value;
+//     if (username == "") {
+//         alert("Please enter your username");
+//         return;
+//     } else if (password == "") {
+//         alert("Please enter your password");
+//         return;
+//     }
+//     document.getElementById("login").submit(); // Form submission
+// }
+</script>
+  <h2>Login</h2>
+  <form action="/login" method="post" id="login">
+    <div class="mb-3">
+      <label for="username" class="form-label required">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label required">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <%#div class="btn btn-primary" onclick="login()">Submit</div%>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>

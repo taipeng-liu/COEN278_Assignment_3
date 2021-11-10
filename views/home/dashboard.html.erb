@@ -1,0 +1,88 @@
+<div class="card text-center" style="width: 60rem;margin:0 auto;">
+<div class="card-body">
+    <h2>Hi <%=session[:user_name]%>, this is your game dashboard~~</h2>
+    <div style="float:left">
+      <div class="card border-light mb-3" style="width: 38rem;height: 22rem; margin:0.5rem;">
+        <div class="card-header">Bet Game</div>
+        <div class="card-body">
+          <h5 class="card-title">Place your bet on dice number (1 to 6)</h5>
+          <form action="/bet" method="post" id="bet">
+            <br/><br/>
+            <div class="row mb-3">
+              <label for="betmoney" class="col-sm-3 col-form-label required">Bet money</label>
+              <div class="col-sm-8">
+                <input type="number" class="form-control" id="betmoney" name="betmoney" required>
+              </div>
+            </div>
+            <br/>
+            <div class="row mb-3">
+              <label for="betnumber" class="col-sm-3 col-form-label required">On</label>
+              <div class="col-sm-8">
+                <select class="form-select" id="betnumber" name="betnumber" aria-label="betnumber" required>
+                  <option selected></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+              </div>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Bet</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+        <div class="card border-info mb-3" style="width: 18rem;height: 22rem; margin:1rem;">
+          <div class="card-header">This Session</div>
+          <div class="card-body">
+            <form>
+              <div class="mb-3">
+                <label for="ttwin_onegame" class="form-label">Total win</label>
+                <input type="number" class="form-control" id="ttwin_onegame" name="ttwin_onegame" placeholder="<%=session[:ttwin_onegame]%>" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="ttloss_onegame" class="form-label">Total loss</label>
+                <input type="number" class="form-control" id="ttloss_onegame" name="ttloss_onegame" placeholder="<%=session[:ttloss_onegame]%>" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="ttprofit_onegame" class="form-label">Total profit</label>
+                <input type="number" class="form-control" id="ttprofit_onegame" name="ttprofit_onegame" placeholder="<%=session[:ttwin_onegame]-session[:ttloss_onegame]%>" disabled>
+              </div>
+            </form>
+          </div>
+        </div>        
+    </div>
+    <div>
+        <div class="card border-info mb-3" style="margin:1rem;">
+          <div class="card-header">All Games played by the account</div>
+          <div class="card-body">
+            <form>
+                <div class="row mb-2">
+                  <div class="col-sm-4">
+                    <label for="ttwin_allgames" class="form-label">Total win</label>
+                    <input type="number" class="form-control" id="ttwin_allgames" name="ttwin_allgames" disabled>
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="ttloss_allgames" class="form-label">Total loss</label>
+                    <input type="number" class="form-control" id="ttloss_allgames" name="ttloss_allgames" disabled>
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="ttprofit_allgames" class="form-label">Total profit</label>
+                    <input type="number" class="form-control" id="ttprofit_allgames" name="ttprofit_allgames" disabled>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div>        
+    </div>
+
+    <div>
+        <a type="button" class="btn btn-danger me-2" href='/logout' onclick="return confirm('Are you sure?')">Logout</a>
+    </div>
+</div>
+</div>
