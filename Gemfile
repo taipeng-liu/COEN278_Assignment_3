@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'slim'
+gem 'sass'
+gem 'dm-core'
+gem 'dm-migrations'
+gem 'thin'
+gem 'dm-mysql-adapter'
 gem 'stripe'
 gem 'json'
 gem 'dotenv'
