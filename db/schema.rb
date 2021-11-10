@@ -1,3 +1,5 @@
+require 'sinatra'
+require 'rubygems'
 require 'active_record'
 
 if development?
