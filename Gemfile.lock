@@ -12,27 +12,10 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
     concurrent-ruby (1.1.9)
     daemons (1.4.1)
-    data_objects (0.10.17)
-      addressable (~> 2.1)
-    dm-core (1.2.1)
-      addressable (~> 2.3)
-    dm-do-adapter (1.2.0)
-      data_objects (~> 0.10.6)
-      dm-core (~> 1.2.0)
-    dm-migrations (1.2.0)
-      dm-core (~> 1.2.0)
-    dm-mysql-adapter (1.2.0)
-      dm-do-adapter (~> 1.2.0)
-      do_mysql (~> 0.10.6)
-    do_mysql (0.10.17)
-      data_objects (= 0.10.17)
     dotenv (2.7.6)
     eventmachine (1.2.7)
-    ffi (1.15.4)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     json (2.6.1)
@@ -41,19 +24,11 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     mysql2 (0.5.3)
-    public_suffix (4.0.6)
+    pg (1.2.3)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
-    rb-fsevent (0.11.0)
-    rb-inotify (0.10.1)
-      ffi (~> 1.0)
     ruby2_keywords (0.0.5)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
     sinatra (2.1.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -86,13 +61,10 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  dm-core
-  dm-migrations
-  dm-mysql-adapter
   dotenv
   json
   mysql2
-  sass
+  pg
   sinatra
   sinatra-reloader
   slim
