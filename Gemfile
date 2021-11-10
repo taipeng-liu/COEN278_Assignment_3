@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-
+ruby "2.7.4"
 gem 'sinatra'
 gem 'slim'
-gem 'sass'
+gem 'sassc'
 gem 'dm-core'
 gem 'dm-migrations'
 gem 'thin'
