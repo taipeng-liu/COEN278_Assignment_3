@@ -1,6 +1,6 @@
 <div class="card text-center" style="width: 60rem;margin:0 auto;">
 <div class="card-body">
-    <h2>Hi <%=session[:user_name]%>, this is your game dashboard~~</h2>
+    <h2>Hi <%=session[:user].name%>, this is your game dashboard~~</h2>
     <div style="float:left">
       <div class="card border-light mb-3" style="width: 38rem;height: 22rem; margin:0.5rem;">
         <div class="card-header">Bet Game</div>
@@ -65,15 +65,15 @@
                 <div class="row mb-2">
                   <div class="col-sm-4">
                     <label for="ttwin_allgames" class="form-label">Total win</label>
-                    <input type="number" class="form-control" id="ttwin_allgames" name="ttwin_allgames" disabled>
+                    <input type="number" class="form-control" id="ttwin_allgames" name="ttwin_allgames" placeholder="<%=session[:user].win%>" disabled>
                   </div>
                   <div class="col-sm-4">
                     <label for="ttloss_allgames" class="form-label">Total loss</label>
-                    <input type="number" class="form-control" id="ttloss_allgames" name="ttloss_allgames" disabled>
+                    <input type="number" class="form-control" id="ttloss_allgames" name="ttloss_allgames" placeholder="<%=session[:user].loss%>" disabled>
                   </div>
                   <div class="col-sm-4">
                     <label for="ttprofit_allgames" class="form-label">Total profit</label>
-                    <input type="number" class="form-control" id="ttprofit_allgames" name="ttprofit_allgames" disabled>
+                    <input type="number" class="form-control" id="ttprofit_allgames" name="ttprofit_allgames" placeholder="<%=session[:user].win-session[:user].loss%>" disabled>
                   </div>
                 </div>
             </form>

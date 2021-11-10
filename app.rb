@@ -18,7 +18,7 @@ class MyWebApp < Sinatra::Base
     end
 
     def user_logged_in
-        if session[:user_id]
+        if session[:user]
             return true
         end
         return false
@@ -32,19 +32,15 @@ class MyWebApp < Sinatra::Base
     end
 
     def init_user_info(user)
-        session[:user_id] = user.id
-        session[:user_name] = user.name
         session[:ttwin_onegame] = 0
         session[:ttloss_onegame] = 0
-        session[:ttwin_allgames] = user.win
-        session[:ttloss_allgames] = user.loss
+        session[:user] = user
     end
 
     def clear_user_info
-        user = User.find(session[:user_id])
-        user.win = session[:ttwin_onegame] + session[:ttwin_allgames]
-        user.loss = session[:ttloss_onegame] + session[:ttloss_allgames]
-        user.save
+        session[:user].win = session[:user].win + session[:ttwin_onegame]
+        session[:user].loss = session[:user].loss + session[:ttloss_onegame]
+        session[:user].save
         session.clear
     end
 
@@ -64,6 +60,10 @@ class MyWebApp < Sinatra::Base
         clear_user_info
         session[:notice] = "You're logged out"
         redirect '/'
+    end
+
+    get '/about' do
+        erb :"home/about.html"
     end
 
     post '/login' do
