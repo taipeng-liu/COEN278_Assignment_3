@@ -1,4 +1,4 @@
-require 'connect'
+require_relative 'connect'
 
 ActiveRecord::Migration.create_table :users do |t|
     t.string :name
